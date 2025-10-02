@@ -58,6 +58,7 @@
     .right{text-align:right}
     .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
     .hidden{display:none}
+  .embed-grid{display:grid;gap:16px}.embed-grid .embed{background:var(--card);padding:12px;border-radius:12px;border:1px solid color-mix(in lch, var(--text), transparent 88%);box-shadow:var(--shadow)}@media (min-width:820px){.embed-grid{grid-template-columns:repeat(2,1fr)}}.embed iframe{width:100%!important;max-width:100%!important}
   </style>
 </head>
 <body>
@@ -114,7 +115,7 @@
       <h2>À propos</h2>
       <div class="grid cols-2">
         <div class="card">
-          <p>Mes travaux portent sur l’analyse expérimentale et la modélisation mathématique du comportement humain dans des situations d’interaction avec des agents automatisés (ex. véhicules autonomes). Je conçois des expériences en VR, j’extrais des patterns comportementaux et je construis des modèles hybrides pour guider la conception d’IA de confiance adaptées aux usagers.</p>
+          <p><strong>Thèse (2022–2025)</strong> : modélisation <em>hybride</em> du comportement humain en interaction avec des agents automatisés (ex. véhicules autonomes). Je conçois des <strong>expériences en réalité virtuelle</strong> pour collecter des données comportementales, puis je combine <strong>analyses quantitatives/qualitatives</strong> et <strong>formalisation mathématique</strong> afin d’outiller la conception d’IA de confiance, centrées usagers et sûres. Travaux menés à l’UM/CNRS, dans le cadre du projet européen <a href="https://www.ai4ccam.eu/" target="_blank" rel="noopener">AI4CCAM</a>.</p>
           <ul>
             <li>Intérêts: <strong>apprentissage multimodal</strong>, <strong>robotique</strong>, <strong>optimisation</strong>.</li>
             <li>Ouvert à: collaborations, co-encadrements, stages, thèses.</li>
@@ -140,19 +141,17 @@
         <button class="btn" data-filter="en-cours">En cours</button>
         <button class="btn" data-filter="termine">Terminés</button>
       </div>
-      <div class="grid cols-2" id="projectsList">
-        <article class="card item" data-status="en-cours">
-          <h3>AI4CCAM — IA pour la mobilité connectée & automatisée</h3>
-          <div class="meta">11/2022–présent · Projet européen · Rôle : Doctorante (UM/CNRS)</div>
-          <p>Analyse expérimentale (VR) et modélisation du comportement humain face à des agents automatisés (ex. véhicules autonomes) afin de concevoir des systèmes d’IA de confiance centrés usagers.</p>
+      $1
+        <article class="card item" data-status="termine">
+          <h3>ArtScience EEG × Oku Shutaro — Danse & projection en temps réel</h3>
+          <div class="meta">Année — Venise (IT) · Collaboration artscience</div>
+          <p>Prototype scénique : capteur EEG embarqué sur danseur·se, traduction visuelle en <strong>temps réel</strong> par projection. Conception de l’interface de capture/flux et pipeline de mapping visuel.</p>
           <div class="row">
-            <a class="btn" href="https://www.linkedin.com/company/ai4ccam" target="_blank" rel="noopener">Projet</a>
-            <span class="badge">en cours</span>
+            <a class="btn" href="https://www.unive.it/data/16437/1/79284" target="_blank" rel="noopener">Événement</a>
+            <span class="badge">terminé</span>
           </div>
         </article>
-        <article class="card item" data-status="termine">
-          <h3>Négociation homme/robot — LIRMM</h3>
-          <div class="meta">01/2022–07/2022 · Montpellier · Développement d’un modèle computationnel</div>
+      $2
           <p>Définition et implémentation d’un modèle pour la négociation H/R dans des scénarios contrôlés.</p>
           <span class="badge">terminé</span>
         </article>
@@ -168,33 +167,80 @@
     <!-- PUBLICATIONS -->
     <section id="publications">
       <h2>Publications sélectionnées</h2>
-      <p class="subtle">Voir aussi mon profil <a href="https://scholar.google.com/citations?user=mzkxR58AAAAJ&amp;hl=fr" target="_blank" rel="noopener">Google Scholar</a>.</p>
+      <p class="subtle">Voir aussi mon profil <a href="https://scholar.google.com/citations?user=mzkxR58AAAAJ&amp;hl=fr" target="_blank" rel="noopener">Google Scholar</a>. · <a href="publications.html">Toutes les publications →</a></p>
       <div class="grid">
         <div class="card pub">
-          <div><strong>S. Victor</strong>, et al. <em>Enhancing JAAD with Knowledge Graphs for Improved Pedestrian Crossing Predictions</em>.</div>
-          <div class="meta">Préprint / Manuscrit en cours</div>
+          <div><strong>S. Victor</strong>, G. Ganesh, M. Croitoru (2024). <em>Enhancing JAAD with Knowledge Graphs for Improved Pedestrian Crossing Predictions</em>. <span class="subtle">International Joint Conference on Conceptual Knowledge Structures</span>, pp. 319–326. Springer.</div>
+          <div class="meta">Actes de conférence · DOI: 10.1007/978-3-031-67868-4_21 · Cité par: Applied Intelligence (2025)</div>
           <div class="actions">
-            <a class="btn" href="#">PDF</a>
-            <a class="btn" href="#" onclick="toggleBib(event,'bib-jaad')">BibTeX</a>
+            <a class="btn" href="https://link.springer.com/chapter/10.1007/978-3-031-67868-4_21" target="_blank" rel="noopener">Éditeur</a>
+            <a class="btn" href="https://lnkd.in/em2sFQTV" target="_blank" rel="noopener">Post LinkedIn</a>
+            <a class="btn" href="https://lnkd.in/eJ4WfyQY" target="_blank" rel="noopener">Cité par (Applied Intelligence)</a>
+            <a class="btn" href="#" onclick="toggleBib(event,'bib-ijccks-2024')">BibTeX</a>
           </div>
-          <pre id="bib-jaad" class="mono hidden">@article{victor_jaad_kg,
+          <pre id="bib-ijccks-2024" class="mono hidden">@inproceedings{victor2024enhancing,
   title={Enhancing JAAD with Knowledge Graphs for Improved Pedestrian Crossing Predictions},
-  author={Victor, Sandra and coauthors},
-  note={Preprint}
+  author={Victor, Sandra and Ganesh, Gowrishankar and Croitoru, Madalina},
+  booktitle={International Joint Conference on Conceptual Knowledge Structures},
+  pages={319--326},
+  year={2024},
+  organization={Springer}
 }</pre>
         </div>
         <div class="card pub">
-          <div><strong>S. Victor</strong>, et al. <em>Towards a moral robot: Reward, effort, and risk distribution to humans following social norms</em>.</div>
-          <div class="meta">Préprint / Manuscrit en cours</div>
+          <div><strong>S. Victor</strong>, B. Yun, C. MamadouToura, E. Indino, P. Bisquert, M. Croitoru, G. Ganesh (2024). <em>Towards a moral robot: Reward, effort, and risk distribution to humans following social norms</em>.</div>
+          <div class="meta">Préprint (2024)</div>
           <div class="actions">
-            <a class="btn" href="#">PDF</a>
-            <a class="btn" href="#" onclick="toggleBib(event,'bib-moral')">BibTeX</a>
+            <a class="btn" href="https://hal.science/hal-04695550/" target="_blank" rel="noopener">HAL / PDF</a>
+            <a class="btn" href="#" onclick="toggleBib(event,'bib-moral-2024')">BibTeX</a>
           </div>
-          <pre id="bib-moral" class="mono hidden">@article{victor_moral_robot,
+          <pre id="bib-moral-2024" class="mono hidden">@article{victor2024towards,
   title={Towards a moral robot: Reward, effort, and risk distribution to humans following social norms},
-  author={Victor, Sandra and coauthors},
-  note={Preprint}
+  author={Victor, Sandra and Yun, Bruno and MamadouToura, Chefou and Indino, Enzo and Bisquert, Pierre and Croitoru, Madalina and Ganesh, Gowrishankar},
+  year={2024}
 }</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFÉRENCES & PRÉSENTATIONS -->
+    <section id="actus">
+      <h2>Actualités</h2>
+      <div class="embed-grid">
+        <div class="embed">
+          <script type="text/javascript" src="https://www.juicer.io/embed/sandravictor/embed-code.js" async defer></script>
+          <noscript><a href="https://www.juicer.io/" target="_blank" rel="noopener">Voir mes posts LinkedIn</a></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section id="conferences">
+      <h2>Conférences & présentations</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 style="margin:0">EUCAD 2025 — Showcase VR (AI4CCAM)</h3>
+          <div class="subtle">2025 · Bruxelles · Présentation démo / interactions humain–véhicule autonome</div>
+          <p>Présentation du dispositif VR conçu dans le cadre d’<a href="https://www.ai4ccam.eu/" target="_blank" rel="noopener">AI4CCAM</a> pour étudier l’interaction humain–agent automatisé et susciter des échanges sur l’IA de confiance.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:0">CONCEPTS 2024 — Communication orale</h3>
+          <div class="subtle">2024 · Présentation de l’article « Enhancing JAAD with Knowledge Graphs… »</div>
+          <div class="row">
+            <a class="btn" href="https://lnkd.in/em2sFQTV" target="_blank" rel="noopener">Lien article</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin:0">MT180 — Finale Régionale Occitanie-Est</h3>
+          <div class="subtle">2025 · Talk vulgarisation (3 min) · 🥉 3ᵉ prix du jury</div>
+          <div class="row">
+            <a class="btn" href="https://youtu.be/JLXlxXiuTkg?si=PQn-zJ_OJ34bbs6M" target="_blank" rel="noopener">🎥 Vidéo (YouTube)</a>
+            <a class="btn" href="https://bit.ly/4jmXiAE" target="_blank" rel="noopener">Article « Les Indiscrétions »</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin:0">GSVF 2024 — Collecte de données VR</h3>
+          <div class="subtle">2024 · Collaboration CNRS × Virtual Vehicle (AI4CCAM)</div>
+          <p>Expérience VR pour l’étude des interactions humain–véhicule autonome et l’acquisition de données pour la thèse.</p>
         </div>
       </div>
     </section>
@@ -203,6 +249,12 @@
     <section id="demos">
       <h2>Démos</h2>
       <div class="demo-grid">
+        <figure class="card">
+          <a href="https://www.unive.it/data/16437/1/79284" target="_blank" rel="noopener">
+            <img src="assets/oku-eeg.jpg" alt="Performance artscience — EEG en direct sur danseur·se (Oku Shutaro)" style="width:100%;border-radius:10px"/>
+          </a>
+          <figcaption>Projet artscience avec Oku Shutaro : capture EEG embarquée sur danseur·se, transcrite en temps réel par projection. <em>(Vidéo à ajouter)</em></figcaption>
+        </figure>
         <figure class="card">
           <a href="#"><img src="assets/demo1.jpg" alt="Démo 1" style="width:100%;border-radius:10px"/></a>
           <figcaption>Courte légende (lien vers vidéo YouTube/Vimeo possible).</figcaption>
@@ -240,7 +292,8 @@
         <div class="card">
           <h3 style="margin-top:0">Certifications & formations</h3>
           <ul class="clean">
-            <li>Safe and Trusted AI Summer School</li>
+            <li>2025 — Éthique de la recherche — Université de Lyon (FUN MOOC, badge)</li>
+            <li>2023 — Safe and Trusted AI Summer School — Imperial College London</li>
             <li>GenAI and Prompt Engineering for Scientific Research</li>
             <li>Module Image 2023</li>
             <li>Unity Junior Programmer</li>
@@ -254,8 +307,9 @@
     <section id="distinctions">
       <h2>Prix & distinctions</h2>
       <ul class="clean">
-        <li class="card">3ᵉ place — Finale régionale Occitanie, concours « Ma thèse en 180 secondes » (MT180)</li>
+        <li class="card">2025 — 🥉 3ᵉ place — Finale régionale Occitanie‑Est, <em>Ma thèse en 180 secondes</em> · <a href="https://bit.ly/4jmXiAE" target="_blank" rel="noopener">Article</a> · <a href="https://lnkd.in/d9TKtkbF" target="_blank" rel="noopener">Post AI4CCAM</a> · <a href="https://lnkd.in/eSqC-kfW" target="_blank" rel="noopener">Vidéo</a></li>
       </ul>
+    </section>
     </section>
 
     <!-- SERVICE -->
