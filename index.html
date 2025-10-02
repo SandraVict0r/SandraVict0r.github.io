@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nom Prénom — Chercheur·e</title>
+  <meta name="description" content="Page personnelle de recherche : background, projets, publications, enseignement, prix, contact." />
+  <meta property="og:title" content="Nom Prénom — Chercheur·e" />
+  <meta property="og:description" content="Page personnelle de recherche : background, projets, publications, enseignement, prix, contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/preview.jpg" />
+  <link rel="icon" href="assets/favicon.ico" />
+  <style>
+    :root{
+      --bg:#0b0d10; --card:#12161b; --muted:#a7b0bf; --text:#e6ecf3; --brand:#4f8cff; --accent:#62d394; --warning:#ffcc66;
+      --shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+    :root.light{ --bg:#f7f9fc; --card:#ffffff; --muted:#4a5568; --text:#0f172a; --brand:#2b6cb0; --accent:#059669; --warning:#b7791f; --shadow: 0 8px 20px rgba(2,6,23,.08);} 
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans","Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1000px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:color-mix(in oklab, var(--bg), transparent 35%);border-bottom:1px solid color-mix(in lch, var(--text), transparent 92%);z-index:50}
+    .nav{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:12px 0}
+    .nav a{font-weight:600}
+    .nav .links{display:flex;gap:16px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid color-mix(in lch, var(--text), transparent 80%);padding:8px 12px;border-radius:12px;background:var(--card);box-shadow:var(--shadow)}
+    .btn:hover{transform:translateY(-1px)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:42px 0}
+    .hero h1{font-size:clamp(28px,3.3vw,44px);margin:0 0 6px}
+    .hero p.lead{font-size:1.05rem;color:var(--muted);margin-top:6px}
+    .chip{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border:1px solid color-mix(in lch, var(--text), transparent 80%);border-radius:999px;font-size:.85rem;color:var(--muted)}
+    .grid{display:grid;gap:16px}
+    @media (min-width: 860px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
+    section{padding:32px 0;border-top:1px dashed color-mix(in lch, var(--text), transparent 88%)}
+    h2{font-size:1.5rem;margin:0 0 8px}
+    .card{background:var(--card);padding:18px;border-radius:16px;box-shadow:var(--shadow);border:1px solid color-mix(in lch, var(--text), transparent 88%)}
+    .subtle{color:var(--muted)}
+    ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .kpi{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;align-items:center}
+    .kpi .val{font-weight:700}
+    .badge{font-size:.78rem;padding:3px 8px;border-radius:10px;border:1px solid color-mix(in lch, var(--text), transparent 80%)}
+    .pub{display:grid;gap:8px}
+    .pub .meta{font-size:.9rem;color:var(--muted)}
+    .pub .actions{display:flex;gap:8px;flex-wrap:wrap}
+    .projects .item{display:grid;gap:6px}
+    .projects .meta{color:var(--muted);font-size:.92rem}
+    .filter{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+    .filter .btn{padding:6px 10px;border-radius:10px}
+    .demo-grid{display:grid;gap:12px}
+    @media (min-width:820px){ .demo-grid{grid-template-columns:repeat(3,1fr)} }
+    figure{margin:0}
+    figcaption{font-size:.86rem;color:var(--muted);margin-top:6px}
+    footer{padding:28px 0;color:var(--muted);border-top:1px dashed color-mix(in lch, var(--text), transparent 88%)}
+    .avatar{width:140px;height:140px;border-radius:18px;object-fit:cover;border:1px solid color-mix(in lch, var(--text), transparent 85%)}
+    .right{text-align:right}
+    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="row">
+        <a href="#" class="chip" title="Revenir en haut">👩‍🔬 Nom Prénom</a>
+        <span class="badge">Laboratoire / Université</span>
+      </div>
+      <nav class="links">
+        <a href="#apropos">À propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#publications">Publications</a>
+        <a href="#demos">Démos</a>
+        <a href="#enseignement">Enseignement</a>
+        <a href="#distinctions">Prix</a>
+        <a href="#contact">Contact</a>
+        <button id="mode" class="btn" aria-label="Basculer clair/sombre">🌓 Thème</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>Nom Prénom</h1>
+        <div class="row">
+          <span class="badge">Titre (ex: Maître de conférences / PhD)</span>
+          <span class="badge">Domaine (ex: IA, Vision, Physique)</span>
+        </div>
+        <p class="lead">Court paragraphe de présentation (2–3 phrases) : thèmes de recherche, objectifs scientifiques, applications, collaboration ouverte, etc.</p>
+        <div class="row" style="margin-top:12px">
+          <a class="btn" href="assets/CV.pdf" target="_blank" rel="noopener">📄 CV</a>
+          <a class="btn" href="#publications">📚 Google Scholar</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">🪪 ORCID</a>
+          <a class="btn" href="https://github.com/votre-identifiant" target="_blank" rel="noopener">💻 GitHub</a>
+          <a class="btn" href="#contact">✉️ Me contacter</a>
+        </div>
+      </div>
+      <div class="right">
+        <img class="avatar" src="assets/portrait.jpg" alt="Portrait de Nom Prénom" />
+        <div class="kpi" style="margin-top:12px">
+          <div class="val">12+</div><div class="label subtle">articles revus par les pairs</div>
+          <div class="val">3</div><div class="label subtle">projets en cours</div>
+          <div class="val">2</div><div class="label subtle">brevets</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- À PROPOS / INTERÊTS -->
+    <section id="apropos">
+      <h2>À propos</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <p>Bio plus détaillée : parcours, laboratoire, collaborations, financement, axes de recherche.</p>
+          <ul>
+            <li>Intérêts: <strong>apprentissage multimodal</strong>, <strong>robotique</strong>, <strong>optimisation</strong>.</li>
+            <li>Ouvert à: collaborations, co-encadrements, stages, thèses.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Compétences clés</h3>
+          <ul class="clean">
+            <li>• Méthodes: MCMC, Deep Learning, Contrôle optimal</li>
+            <li>• Outils: Python, PyTorch, CUDA, Docker</li>
+            <li>• Données: vision, capteurs, séries temporelles</li>
+            <li>• Encadrement: 2 thèses, 5 masters</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projets" class="projects">
+      <h2>Projets</h2>
+      <div class="filter">
+        <button class="btn" data-filter="all">Tous</button>
+        <button class="btn" data-filter="en-cours">En cours</button>
+        <button class="btn" data-filter="termine">Terminés</button>
+      </div>
+      <div class="grid cols-2" id="projectsList">
+        <article class="card item" data-status="en-cours">
+          <h3>Projet A — Robotique collaborative</h3>
+          <div class="meta">2024–présent · financement ANR · rôle: PI</div>
+          <p>Résumé en 2–3 lignes. Lien vers code et page dédiée.</p>
+          <div class="row">
+            <a class="btn" href="#">Code</a>
+            <a class="btn" href="#">Site</a>
+            <span class="badge">en cours</span>
+          </div>
+        </article>
+        <article class="card item" data-status="termine">
+          <h3>Projet B — Vision embarquée</h3>
+          <div class="meta">2022–2024 · partenariat industriel · rôle: co-PI</div>
+          <p>Brève description et résultats clés (démo, dataset, publication).</p>
+          <div class="row">
+            <a class="btn" href="#">Article</a>
+            <a class="btn" href="#">Dataset</a>
+            <span class="badge">terminé</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <h2>Publications sélectionnées</h2>
+      <p class="subtle">Marquez ✳ les auteurs encadrés, <span class="mono">*</span> = co-premier auteur. Ajoutez un lien vers votre profil Google Scholar.</p>
+      <div class="grid">
+        <div class="card pub">
+          <div><strong>A. Author*</strong>, B. Collaborator, <strong>Vous✳</strong> (2025). <em>Titre de l'article</em>. Conférence/Journal.</div>
+          <div class="meta">PDF · Code · Vidéo · DOI</div>
+          <div class="actions">
+            <a class="btn" href="#">PDF</a>
+            <a class="btn" href="#">Code</a>
+            <a class="btn" href="#" onclick="toggleBib(event,'bib1')">BibTeX</a>
+          </div>
+          <pre id="bib1" class="mono hidden">@inproceedings{author2025,
+  title={Titre de l'article},
+  author={Author, A. and Collaborator, B. and Vous},
+  booktitle={Conférence},
+  year={2025}
+}</pre>
+        </div>
+        <div class="card pub">
+          <div><strong>Vous</strong> (2024). <em>Titre de la thèse</em>. Université.</div>
+          <div class="meta">Manuscrit · Slides · HAL</div>
+          <div class="actions">
+            <a class="btn" href="#">Manuscrit</a>
+            <a class="btn" href="#">HAL</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DÉMOS -->
+    <section id="demos">
+      <h2>Démos</h2>
+      <div class="demo-grid">
+        <figure class="card">
+          <a href="#"><img src="assets/demo1.jpg" alt="Démo 1" style="width:100%;border-radius:10px"/></a>
+          <figcaption>Courte légende (lien vers vidéo YouTube/Vimeo possible).</figcaption>
+        </figure>
+        <figure class="card">
+          <a href="#"><img src="assets/demo2.jpg" alt="Démo 2" style="width:100%;border-radius:10px"/></a>
+          <figcaption>Résultat clé avec explication concise.</figcaption>
+        </figure>
+        <figure class="card">
+          <a href="#"><img src="assets/demo3.jpg" alt="Démo 3" style="width:100%;border-radius:10px"/></a>
+          <figcaption>Prototype interactif / notebook.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ENSEIGNEMENT -->
+    <section id="enseignement">
+      <h2>Enseignement & encadrement</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3 style="margin-top:0">Cours</h3>
+          <ul class="clean">
+            <li>2024–2025 · <strong>Apprentissage profond</strong> (M2) · 24h CM/TD</li>
+            <li>2023–2025 · <strong>Traitement d'images</strong> (L3) · 18h TD</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Encadrement</h3>
+          <ul class="clean">
+            <li>Thèse — Étudiante X (Sujet Y), 2023–</li>
+            <li>Stage M2 — Étudiant·e Z, 2024</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIPLÔMES & QUALIFICATIONS -->
+    <section id="diplomes">
+      <h2>Diplômes, qualifications & formations</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <ul class="clean">
+            <li>2024 — HDR (Habilitation à Diriger des Recherches), Université …</li>
+            <li>2021 — PhD, Université …</li>
+            <li>2017 — MSc, École …</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Certifications & formations</h3>
+          <ul class="clean">
+            <li>2023 — Formation pédagogie universitaire</li>
+            <li>2022 — Certificat Python avancé</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISTINCTIONS -->
+    <section id="distinctions">
+      <h2>Prix & distinctions</h2>
+      <ul class="clean">
+        <li class="card">2025 — Best Paper Award, Conférence XYZ</li>
+        <li class="card">2023 — Prix de thèse, Société savante ABC</li>
+      </ul>
+    </section>
+
+    <!-- SERVICE -->
+    <section id="service">
+      <h2>Service à la communauté</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3 style="margin-top:0">Comités & reviewing</h3>
+          <ul class="clean">
+            <li>PC — Conférence A (2024–)</li>
+            <li>Relecteur·rice — Journal B, C</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Organisation</h3>
+          <ul class="clean">
+            <li>Atelier « Sujet » à Conférence D (2023)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>📧 <a href="mailto:votre.email@univ.fr">votre.email@univ.fr</a> · 🧑‍💻 <a href="https://github.com/votre-identifiant" target="_blank" rel="noopener">github.com/votre-identifiant</a></p>
+        <p>🏛️ Laboratoire / Université, Adresse postale.</p>
+        <p>Réseaux: <a href="#">Google Scholar</a> · <a href="#">ORCID</a> · <a href="#">LinkedIn</a> · <a href="#">Twitter/X</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Nom Prénom. Contenu placé sous licence CC BY-NC 4.0 sauf mention contraire.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Année automatique
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Thème clair/sombre
+    const btn = document.getElementById('mode');
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    if(prefersLight) document.documentElement.classList.add('light');
+    btn.addEventListener('click', ()=> document.documentElement.classList.toggle('light'));
+
+    // Filtre projets
+    const list = document.getElementById('projectsList');
+    document.querySelectorAll('[data-filter]').forEach(el=>{
+      el.addEventListener('click', ()=>{
+        const f = el.dataset.filter;
+        list.querySelectorAll('.item').forEach(card=>{
+          card.style.display = (f==='all'|| card.dataset.status===f)? 'grid' : 'none';
+        });
+      })
+    })
+
+    // Toggle BibTeX
+    function toggleBib(e,id){ e.preventDefault(); const el=document.getElementById(id); el.classList.toggle('hidden'); }
+  </script>
+</body>
+</html>
