@@ -136,25 +136,83 @@
     <!-- PROJETS -->
     <section id="projets" class="projects">
       <h2>Projets</h2>
+      <p class="subtle" id="projectCounts"></p>
       <div class="filter">
         <button class="btn" data-filter="all">Tous</button>
         <button class="btn" data-filter="en-cours">En cours</button>
         <button class="btn" data-filter="termine">Terminés</button>
       </div>
-      $1
+      <div class="grid cols-2" id="projectsList">
+        <!-- PhD / AI4CCAM -->
+        <article class="card item" data-status="en-cours">
+          <figure>
+            <img src="assets/ai4ccam-vr.jpg" alt="VR – Interaction humain/AV (AI4CCAM)" style="width:100%;border-radius:10px"/>
+          </figure>
+          <h3>Thèse — Interaction humain × agent automatisé (AI4CCAM)</h3>
+          <div class="meta">11/2022–présent · UM/CNRS · VR expérimentale + modélisation</div>
+          <p>Conception d’expériences <strong>VR</strong> pour étudier la prise de décision humaine face à des véhicules autonomes; extraction de patterns comportementaux et <strong>modélisation hybride</strong> (quanti/quali) pour l’IA de confiance.</p>
+          <details><summary>En savoir plus</summary>
+            <ul>
+              <li><strong>Acquisition</strong> : scénarios VR, mesures temporelles & comportementales.</li>
+              <li><strong>Analyse</strong> : features décisionnelles (crossing intent, time‑to‑collision…).</li>
+              <li><strong>Modélisation</strong> : formalisation mathématique + intégration connaissances.</li>
+              <li><strong>Transfert</strong> : recommandations conception HMI pour AV.</li>
+            </ul>
+          </details>
+          <div class="row">
+            <a class="btn" href="https://www.ai4ccam.eu/" target="_blank" rel="noopener">Site AI4CCAM</a>
+            <a class="btn" href="https://www.linkedin.com/company/ai4ccam" target="_blank" rel="noopener">LinkedIn</a>
+            <span class="badge">en cours</span>
+          </div>
+        </article>
+
+        <!-- Moral Robot (Master) -->
         <article class="card item" data-status="termine">
+          <figure>
+            <img src="assets/moral-robot.jpg" alt="Moral Robot — jeu en ligne & IA" style="width:100%;border-radius:10px"/>
+          </figure>
+          <h3>Moral Robot — Jeu en ligne & IA (projet de master) <span class="badge">Master</span></h3>
+          <div class="meta">2022 · Montpellier · collecte de données + IA interactive</div>
+          <p>Création d’un <strong>jeu web</strong> de décisions morales pour collecter des données réelles, puis déploiement d’une <strong>IA interactive</strong> permettant de jouer contre/avec le modèle et d’observer ses choix.</p>
+          <details><summary>Pipeline & résultats</summary>
+            <ul>
+              <li><strong>Conception du jeu</strong> : scénarios, UX, instrumentation.</li>
+              <li><strong>Collecte</strong> : données comportementales anonymisées.</li>
+              <li><strong>Apprentissage</strong> : entraînement et évaluation du modèle.</li>
+              <li><strong>Démo</strong> : notebook interactif (comparaison humain/IA).</li>
+            </ul>
+          </details>
+          <div class="row">
+            <a class="btn" href="https://ethicallychoice.alwaysdata.net/" target="_blank" rel="noopener">Jeu en ligne</a>
+            <a class="btn" href="https://deepnote.com/app/notebook-86f1/Stage-project-df420847-9b7d-4085-bb2b-2d13083511fa" target="_blank" rel="noopener">IA interactive (notebook)</a>
+            <a class="btn" href="https://hal.science/hal-04695550/" target="_blank" rel="noopener">Article (HAL)</a>
+            <span class="badge">terminé</span>
+          </div>
+        </article>
+
+        <!-- ArtScience EEG -->
+        <article class="card item" data-status="termine">
+          <figure>
+            <img src="assets/oku-eeg.jpg" alt="ArtScience EEG × Oku Shutaro" style="width:100%;border-radius:10px"/>
+          </figure>
           <h3>ArtScience EEG × Oku Shutaro — Danse & projection en temps réel</h3>
-          <div class="meta">Année — Venise (IT) · Collaboration artscience</div>
-          <p>Prototype scénique : capteur EEG embarqué sur danseur·se, traduction visuelle en <strong>temps réel</strong> par projection. Conception de l’interface de capture/flux et pipeline de mapping visuel.</p>
+          <div class="meta">03/11/2023 — Venise (IT) · Collaboration artscience</div>
+          <p>Capteur EEG embarqué sur danseur·se, traduction visuelle <strong>en temps réel</strong> par projection. Conception interface de capture/flux et pipeline de mapping visuel.</p>
           <div class="row">
             <a class="btn" href="https://www.unive.it/data/16437/1/79284" target="_blank" rel="noopener">Événement</a>
             <span class="badge">terminé</span>
           </div>
         </article>
-      $2
+
+        <!-- Négociation H/R (LIRMM) -->
+        <article class="card item" data-status="termine">
+          <h3>Négociation homme/robot — LIRMM</h3>
+          <div class="meta">01/2022–07/2022 · Montpellier · Modèle computationnel</div>
           <p>Définition et implémentation d’un modèle pour la négociation H/R dans des scénarios contrôlés.</p>
           <span class="badge">terminé</span>
         </article>
+
+        <!-- Interface plasma (LERMA) -->
         <article class="card item" data-status="termine">
           <h3>Interface de calcul plasma — LERMA (Observatoire de Paris)</h3>
           <div class="meta">12/2019 · Paris · Python</div>
@@ -369,6 +427,17 @@
         });
       })
     })
+
+    // Compteur projets
+    function updateCounts(){
+      const items = list.querySelectorAll('.item');
+      const total = items.length;
+      let enCours=0, termines=0;
+      items.forEach(c=>{ if(c.dataset.status==='en-cours') enCours++; if(c.dataset.status==='termine') termines++; });
+      const el = document.getElementById('projectCounts');
+      if(el) el.textContent = `${termines} terminés · ${enCours} en cours · ${total} total`;
+    }
+    updateCounts()
 
     // Toggle BibTeX
     function toggleBib(e,id){ e.preventDefault(); const el=document.getElementById(id); el.classList.toggle('hidden'); }
